@@ -1,54 +1,56 @@
 html {
-  height: 100%;
-  width: 100%;
+	height: 100%;
+	width: 100%;
 }
 
 .button-container {
-  text-align: center;
-  margin: 5px;
+	text-align: center;
+	margin: 5px;
 }
 
 #change-button-container {
-  text-align: center;
+	text-align: center;
 }
 
 #main-box-container {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  margin: auto;
-  border: solid;
-  background-color: peachpuff;
+	position: relative;
+	width: 500px;
+	height: 500px;
+	margin: auto;
+	border: solid;
+	background-color: peachpuff;
 }
 
 #main-box {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  margin: 0px;
-  width: 100px;
-  height: 100px;
-  border: solid;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	width: 100px;
+	height: 100px;
+	border: solid;
 }
 
 #main-box img {
-  width: 100%;
+	width: 100%;
 }
 
 .cookie-box {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  margin: 0px;
-  width: 100px;
-  height: 100px;
-
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin: 0px;
+	width: 100px;
+	height: 100px;
 }
 
 .cookie-sprite {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 30px;  /* put in the center of the cookie-box*/
-  left: 30px; /* put in the center of the cookie-box*/
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 30px; /* put in the center of the cookie-box*/
+	left: 30px; /* put in the center of the cookie-box*/
+}
+.score-container {
+	text-align: center;
 }

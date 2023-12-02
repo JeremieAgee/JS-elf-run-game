@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>replit</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-  <header>
-    Elf Run!
-  </header>
-  <main>
-    <div class="button-container">
-      
-      <button id="left-button"> Left </button>
-      <button id="right-button"> Right </button>
-      <button id="up-button"> Up </button>
-      <!-- TODO: Make button for down. -->
-      <button id ="down-button">Down</button>
-      
-    </div>
-    <div id="main-box-container">
-      <div id="cookie-1" class="cookie-box">
-        <img class="cookie-sprite" src="img/cookie.png" alt="A sprite of a cookie">
+	<body>
+		<header>Elf Run!</header>
+		<main>
+			<div class="score-container">
+        <h1 id="score">Score:</h1>
       </div>
-      <div id="cookie-2" class="cookie-box">
-        <img class="cookie-sprite" src="img/cookie.png" alt="A sprite of a cookie">
-      </div>
-      <div id="cookie-3" class="cookie-box">
-        <img class="cookie-sprite" src="img/cookie.png" alt="A sprite of a cookie">
-      </div>
-      <div id="cookie-4" class="cookie-box">
-        <img class="cookie-sprite" src="img/cookie.png" alt="A sprite of a cookie">
-      </div>
-      <div id="cookie-5" class="cookie-box">
-        <img class="cookie-sprite" src="img/cookie.png" alt="A sprite of a cookie">
-      </div>
-      <div id="main-box">
-        <img id="elf-sprite" src="img/elf_down.png" alt="A sprite of an elf">
-      </div>
-    </div>
-  </main>
-  <footer>
-    &copy; Elves R Us.
-  </footer>
-  <script src="script.js"></script>
-</body>
-
+			<div class="button-container">
+				<button id="left-button">Left</button>
+				<button id="right-button">Right</button>
+				<button id="up-button">Up</button>
+				<!-- TODO: Make button for down. -->
+				<button id="down-button">Down</button>
+			</div>
+			<div id="main-box-container">
+				<div id="cookie-1" class="cookie-box">
+					<img
+						class="cookie-sprite"
+						src="img/cookie.png"
+						alt="A sprite of a cookie"
+					/>
+				</div>
+				<div id="cookie-2" class="cookie-box">
+					<img
+						class="cookie-sprite"
+						src="img/cookie.png"
+						alt="A sprite of a cookie"
+					/>
+				</div>
+				<div id="cookie-3" class="cookie-box">
+					<img
+						class="cookie-sprite"
+						src="img/cookie.png"
+						alt="A sprite of a cookie"
+					/>
+				</div>
+				<div id="cookie-4" class="cookie-box">
+					<img
+						class="cookie-sprite"
+						src="img/cookie.png"
+						alt="A sprite of a cookie"
+					/>
+				</div>
+				<div id="cookie-5" class="cookie-box">
+					<img
+						class="cookie-sprite"
+						src="img/cookie.png"
+						alt="A sprite of a cookie"
+					/>
+				</div>
+				<div id="main-box">
+					<img
+						id="elf-sprite"
+						src="img/elf_down.png"
+						alt="A sprite of an elf"
+					/>
+				</div>
+			</div>
+		</main>
+		<footer>&copy; Elves R Us.</footer>
+		<script src="script.js"></script>
+	</body>
 </html>

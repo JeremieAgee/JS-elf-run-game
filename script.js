@@ -21,22 +21,28 @@ function placeElf(leftPosition, topPosition) {
 // This makes the elf turn and move.
 // *****************************************
 function walkLeft() {
-	console.log("walk left");
-	elfLocation.left--; // subtract one from position left
-	turnElf("left");
-	placeElf(elfLocation.left, elfLocation.top); // move the elf sprite
+	if (elfLocation.left != 0) {
+		console.log("walk left");
+		elfLocation.left--; // subtract one from position left
+		turnElf("left");
+		placeElf(elfLocation.left, elfLocation.top); // move the elf sprite
+	}
 }
 function walkRight() {
-	console.log("walk right");
-	elfLocation.left++; // add one to position left
-	turnElf("right");
-	placeElf(elfLocation.left, elfLocation.top); // move the elf sprite
+	if (elfLocation.left != 4) {
+		console.log("walk right");
+		elfLocation.left++; // add one to position left
+		turnElf("right");
+		placeElf(elfLocation.left, elfLocation.top); // move the elf sprite
+	}
 }
 function walkUp() {
-	console.log("walk up");
-	elfLocation.top--; // subtract one from position top
-	turnElf("up");
-	placeElf(elfLocation.left, elfLocation.top); // move the elf sprite
+	if (elfLocation.top != 0) {
+		console.log("walk up");
+		elfLocation.top--; // subtract one from position top
+		turnElf("up");
+		placeElf(elfLocation.left, elfLocation.top); // move the elf sprite
+	}
 }
 // *****************************************
 // TODO: finish this function to make the elf
@@ -44,12 +50,13 @@ function walkUp() {
 // *****************************************
 function walkDown() {
 	console.log("walk down");
-	// TODO: make the elf turn and walk down
-	elfLocation.top++;
-	turnElf("down");
-	placeElf(elfLocation.left, elfLocation.top);
+	if (elfLocation.top != 4) {
+		// TODO: make the elf turn and walk down
+		elfLocation.top++;
+		turnElf("down");
+		placeElf(elfLocation.left, elfLocation.top);
+	}
 }
-
 // *****************************************
 // set up the button for walking left
 // *****************************************
@@ -150,6 +157,7 @@ let cookieObjects = [
 ];
 
 let cookieElm;
+let score = document.querySelector("#score");
 let points = 0;
 // *****************************************
 // This code places the cookies on the screen
@@ -163,17 +171,16 @@ for (cookies of cookieObjects) {
 	console.log(cookies.left);
 }
 
-function setRandomCookies() {
-	for (cookies of cookieObjects) {
-		cookies.left = Math.floor(Math.random() * 4);
-		cookies.top = Math.floor(Math.random() * 4);
-		console.log(cookies);
-		cookieElm = document.querySelector(cookies.id); // select "cookie-1"
-		cookieElm.style.left = 100 * cookies.left + "px";
-		cookieElm.style.top = 100 * cookies.top + "px";
-	}
+function setRandomCookie(cookie) {
+	cookie.left = Math.floor(Math.random() * 4);
+	cookie.top = Math.floor(Math.random() * 4);
+	cookieElm = document.querySelector(cookie.id);
+	cookieElm.style.left = 100 * cookie.left + "px";
+	cookieElm.style.top = 100 * cookie.top + "px";
 }
-setRandomCookies();
+for (cookie of cookieObjects) {
+	setRandomCookie(cookie);
+}
 // BONUS: Replace the code for placing the cookies
 // on the page with a for-loop
 
@@ -206,9 +213,16 @@ function eatCookie() {
 		cookieElm = document.querySelector(cookie.id);
 		if (cookie.top == elfLocation.top && cookie.left == elfLocation.left) {
 			cookieElm = document.querySelector(cookie.id);
-			cookieElm.style.display = "none";
-      points++;
-      console.log(points);
+			if (cookieElm.style.display != "none") {
+				cookieElm.style.display = "none";
+				points++;
+				console.log(points);
+			}
+			if (cookieElm.style.display == "none") {
+				cookieElm.style.display = "";
+				setRandomCookie(cookie);
+			}
 		}
 	}
+	score.innerHTML = "Score: " + points;
 }
